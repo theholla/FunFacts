@@ -23,21 +23,20 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String[] facts = {
+                    "Ants stretch when they wake up in the morning",
+                    "Ostriches can run faster than horses.",
+                    "Biketour is fun!"
+                };
+
                 //button was clicked, so update factlabel with a new fact
                 String fact = "";
                 //Randomly select a fact
                 Random randomGenerator = new Random();
-                int randomNumber = randomGenerator.nextInt(3);
-                // convert random number to a text fact
-                if (randomNumber == 0) {
-                    fact = "Ants stretch when they wake up in the morning";
-                } else if (randomNumber == 1) {
-                    fact = "Ostriches can run faster than horses.";
-                } else if (randomNumber == 2) {
-                    fact = "Olympic gold medals are actually made mostly of silver";
-                } else {
-                    fact = "Sorry, there was an error in our program!";
-                }
+                int randomNumber = randomGenerator.nextInt(facts.length);
+
+                fact = facts[randomNumber];
+
                 //Update the label with our dynamic fact
                 factLabel.setText(fact);
             }
