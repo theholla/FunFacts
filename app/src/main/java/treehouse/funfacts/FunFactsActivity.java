@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
 
@@ -22,8 +23,22 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //button was clicked, so ui update factlabel with a new fact
-                String fact = "Ostriches can run faster than horses.";
+                //button was clicked, so update factlabel with a new fact
+                String fact = "";
+                //Randomly select a fact
+                Random randomGenerator = new Random();
+                int randomNumber = randomGenerator.nextInt(3);
+                // convert random number to a text fact
+                if (randomNumber == 0) {
+                    fact = "Ants stretch when they wake up in the morning";
+                } else if (randomNumber == 1) {
+                    fact = "Ostriches can run faster than horses.";
+                } else if (randomNumber == 2) {
+                    fact = "Olympic gold medals are actually made mostly of silver";
+                } else {
+                    fact = "Sorry, there was an error in our program!";
+                }
+                //Update the label with our dynamic fact
                 factLabel.setText(fact);
             }
         };
