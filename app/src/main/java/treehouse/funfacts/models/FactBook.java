@@ -1,4 +1,4 @@
-package treehouse.funfacts;
+package treehouse.funfacts.models;
 
 import java.util.Random;
 
